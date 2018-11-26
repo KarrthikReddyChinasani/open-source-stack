@@ -1,0 +1,132 @@
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  vertical-align: middle;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  height: 54px;
+  justify-content: center;
+}
+
+.nav {
+  li {
+    height: 54px;
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    a {
+        justify-content: space-between;
+        padding-top: 3px;
+        margin-top: -3px;
+        color: #fff;
+        display: flex;
+        font-size: 12px;
+        font-weight: 700;
+        align-items: center;
+        padding: 0 15px;
+        white-space: nowrap;
+        text-decoration: none;
+        svg {
+          overflow: hidden;
+          margin-right: 7px;
+          font-size: 22px;
+          width: 22px;
+          height: 22px;
+          margin-top: 0px;
+          color: #4c4c4c;
+          fill: #4c4c4c;
+        }
+    }
+  }
+}
+
+.nav a:hover {
+  background: #303030 !important;
+  border-bottom: 2px solid #4772d9 !important;
+}
+
+.header {
+  background-color: #282828;
+}
+
+.sign-in-header {
+  height: 54px;
+  position: relative;
+  display: flex;
+  padding: 0px !important;
+  align-items: stretch;
+  transition: all 0.2s ease;
+  a {
+    justify-content: space-between;
+    padding-top: 3px;
+    margin-top: -3px;
+    color: #fff;
+    display: flex;
+    font-weight: 700;
+    align-items: center;
+    padding: 0 15px;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+}
+
+.icon-text-button {
+  justify-content: space-between;
+  padding-top: 3px;
+  margin-top: -3px;
+  color: #fff;
+  display: flex;
+  font-weight: 700;
+  align-items: center;
+  padding: 0 10px;
+  white-space: nowrap;
+  text-decoration: none;
+  svg {
+    overflow: hidden;
+    margin-right: 7px;
+    font-size: 22px;
+    width: 22px;
+    height: 22px;
+    margin-top: 0px;
+    color: #4c4c4c;
+    fill: #4c4c4c;
+  }
+}
+
+.project-name {
+  padding: 10px;
+  .title-1 {
+    margin: 0px;
+    font-size: 24px;
+    font-weight: 500;
+    color: white;
+    font-family: "Titillium Web", sans-serif;
+  }
+  .title-2 {
+    margin: 0px;
+    font-size: 24px;
+    font-weight: 900;
+    color: #2196f3;
+    font-family: "Titillium Web", sans-serif;
+  }
+}
+
+.register-button {
+  color: #4772d9 !important;
+}
+
+.register-button:hover {
+  background: #303030;
+  border-bottom: 2px solid #4772d9 !important;
+}
+
+.row {
+  margin: 0px !important;
+}
