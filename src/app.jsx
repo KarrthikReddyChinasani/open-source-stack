@@ -9,6 +9,7 @@ import { HomePage } from './components/HomePage';
 import { LoginPage } from './components/LoginPage';
 import { RegisterPage } from './components/RegisterPage';
 import { Header } from './components/Header';
+import { SearchPage } from './components/SearchPage';
 
 class App extends React.Component {
 	constructor(props) {
@@ -27,7 +28,7 @@ class App extends React.Component {
 			<div>
 				<Header />
 				<div className="jumbotron">
-					<div className="container">
+					<div className="container-fluid">
 						<div className="col-sm-8 col-sm-offset-2">
 							{alert.message &&
                             <div className={`alert ${alert.type}`}>{alert.message}</div>
@@ -49,6 +50,7 @@ class App extends React.Component {
 
 function mapStateToProps(state) {
 	const { alert } = state;
+	console.log("alert", state);
 	return {
 		alert
 	};
