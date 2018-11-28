@@ -50,13 +50,16 @@ class Header extends React.Component {
 									<a onClick={this.searchClick}>Search</a>
 								</li>
 								<li>
-									<a href="/work/">Work</a>
+									<a href="/work/">Top Projects</a>
 								</li>
 								<li>
-									<a href="/clients/">Clients</a>
+									<a href="/clients/">Forum</a>
 								</li>
 								<li>
-									<a href="/contact/">Contact</a>
+									<a href="/contact/">Liked</a>
+								</li>
+								<li>
+									<a href="/contact/">Followed</a>
 								</li>
 							</ul>
 						</div>
