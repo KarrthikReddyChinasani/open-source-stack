@@ -1,0 +1,17 @@
+.search-page {
+    height: 100vh;
+    max-height: 100vh;
+    overflow: scroll;
+    -ms-overflow-style: none;  // IE 10+
+    overflow: -moz-scrollbars-none;  // Firefox
+    .search-header {
+        height: 7vh;
+        background: black;
+        color: white;
+    }
+}
+
+.search-page::-webkit-scrollbar { 
+    display: none;  // Safari and Chrome
+}
+
