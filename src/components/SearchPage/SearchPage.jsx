@@ -33,6 +33,8 @@ class SearchPage extends React.Component {
 							</div>
 						</div>
 					</div>
+					<div className="search-body">
+					</div>
 				</div>			
 			</div>
 		);
