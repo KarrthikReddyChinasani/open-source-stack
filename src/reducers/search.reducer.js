@@ -6,13 +6,11 @@ export function search(state = initialState, action) {
 	switch (action.type) {
 	case searchConstants.modalOpen:
 		return {
-			isModalOpen: true,
-			user: action.user
+			isSearchOpen: true
 		};
 	case searchConstants.modalClose:
 		return {
-			isModalOpen: false,
-			user: action.user
+			isSearchOpen: false
 		};
 	default:
 		return state;

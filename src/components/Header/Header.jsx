@@ -9,16 +9,11 @@ import { searchActions } from '../../actions';
 class Header extends React.Component {
 	constructor(props) {
 		super(props);
-		this.props.dispatch(searchActions.searchClose());
-		this.state = { isSearchOpen: this.props.isSearchOpen };
 		this.searchClick = this.searchClick.bind(this);
 	}
 
 	searchClick(e) {
 		e.preventDefault();
-		this.setState( {
-			isSearchOpen: !this.state.isSearchOpen
-		});
 		const { dispatch } = this.props;
 		dispatch(searchActions.searchOpen());
 	}
@@ -90,9 +85,9 @@ class Header extends React.Component {
 }
 
 function mapStateToProps(state) {
-	const { isSearchOpen } = state.search;
+
 	return {
-		isSearchOpen
+		state
 	};
 }
 
