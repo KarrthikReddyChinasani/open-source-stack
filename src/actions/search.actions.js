@@ -6,9 +6,9 @@ export const searchActions = {
 };
 
 function searchOpen() {
-	return { type: searchConstants.modalOpen };
+	return { type: searchConstants.SEARCH_OPEN };
 }
 
 function searchClose() {
-	return { type: searchConstants.modalClose };
+	return { type: searchConstants.SEARCH_CLOSE };
 }
