@@ -8,11 +8,16 @@ import { PrivateRoute } from '../PrivateRoute';
 import { HomePage } from '../HomePage';
 import { LoginPage } from '../LoginPage';
 import { RegisterPage } from '../RegisterPage';
+import './bodyStyles.scss';
 
 class Body extends React.Component {
 	constructor(props) {
 		super(props);
 
+		this.state = {
+	       width:  800,
+	       height: 182
+	     }
 		const { dispatch } = this.props;
 		history.listen((location, action) => {
 			// clear alert on location change
@@ -20,12 +25,36 @@ class Body extends React.Component {
 		});
 	}
 
+	/**
+	   * Calculate & Update state of new dimensions
+	   */
+	  updateDimensions() {
+	      this.setState({ width: window.innerWidth, height: window.innerHeight});
+	  }
+
+	  /**
+	   * Add event listener
+	   */
+	  componentDidMount() {
+			console.log("coming here in body")
+	    this.updateDimensions();
+	    window.addEventListener("resize", this.updateDimensions.bind(this));
+	  }
+
+	  /**
+	   * Remove event listener
+	   */
+	  componentWillUnmount() {
+	    window.removeEventListener("resize", this.updateDimensions.bind(this));
+	  }
+
 	render() {
 		const { alert } = this.props;
 		return (
-			<div className="jumbotron">
+			<div>
+			<header className="home_image" style={this.state} >
 				<div className="container-fluid">
-					<div className="col-sm-8 col-sm-offset-2">
+					<div className="col-sm-12">
 						{alert.message &&
                             <div className={`alert ${alert.type}`}>{alert.message}</div>
 						}
@@ -38,6 +67,7 @@ class Body extends React.Component {
 						</Router>
 					</div>
 				</div>
+				</header>
 			</div>
 		);
 	}
@@ -51,4 +81,4 @@ function mapStateToProps(state) {
 }
 
 const connectedBody = connect(mapStateToProps)(Body);
-export { connectedBody as Body }; 
+export { connectedBody as Body };
