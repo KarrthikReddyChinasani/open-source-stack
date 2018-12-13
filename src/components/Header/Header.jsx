@@ -23,12 +23,12 @@ class Header extends React.Component {
 			<div>
 				<div className="container-fluid header">
 					<div className="row">
-					<div className="col col-md-8 col-md-offset-2">
+					<div className="col col-md-11 col-md-offset-1">
 						<div className="col col-md-3 project-name">
 							<span className="title-1">Open Source</span>{' '}
 							<span className="title-2">Stack</span>
 						</div>
-						<div className="col col-md-7 nav-wrapper">
+						<div className="col col-md-5 nav-wrapper">
 							<ul className="nav">
 								<li>
 									<a className="icon-text-button" href="/">
@@ -68,7 +68,7 @@ class Header extends React.Component {
 								</li>
 							</ul>
 						</div>
-						<div className="col col-md-2 sign-in-header">
+						<div className="col col-md-3 sign-in-header">
 							<a href="/register" className="register-button">
 								Create Account
 							</a>
