@@ -4,12 +4,9 @@ import ReactDOM from 'react-dom';
 import { App } from './app.jsx';
 import * as serviceWorker from './serviceWorker';
 
-import { createStore } from 'redux';
-import postReducer from './reducers';
 import { Provider } from 'react-redux';
 import WebFont from 'webfontloader';
-
-const store = createStore(postReducer);
+import { store } from './helpers';
 
 ReactDOM.render(
 	<Provider store={store}>

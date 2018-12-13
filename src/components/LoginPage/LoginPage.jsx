@@ -42,7 +42,9 @@ class LoginPage extends React.Component {
 		const { loggingIn } = this.props;
 		const { username, password, submitted } = this.state;
 		return (
+
 			<div className="col-md-4 col-md-offset-8 login-page">
+
 				<div className="box-wrapper">
 					<h2>Login</h2>
 					<form name="form" onSubmit={this.handleSubmit}>
@@ -60,7 +62,7 @@ class LoginPage extends React.Component {
 	                            <div className="help-block">Password is required</div>
 							}
 						</div>
-						<div class="forgot-pwd">
+						<div className="forgot-pwd">
 							<Link to="/register" className="btn btn-link">Register</Link>
 							<Link to="/register" className="btn btn-link">Forgot Password</Link>
 						</div>
