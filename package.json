@@ -11,6 +11,7 @@
     "history": "^4.6.3",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-growl": "^0.1.2",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.2",
     "react-scripts": "2.1.1",

@@ -1,4 +1,4 @@
-import apiConstants from './../constants';
+import { apiConstants } from '../constants';
 import { authHeader } from '../helpers';
 
 export const userService = {
@@ -11,14 +11,14 @@ export const userService = {
     delete: _delete
 };
 
-function login(username, password) {
+function login(userName, password) {
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password })
+        body: JSON.stringify({ userName, password })
     };
 
-    return fetch(`${apiConstants.API_URL}/users/authenticate`, requestOptions)
+    return fetch(`${apiConstants.API_URL}/api/user/login`, requestOptions)
         .then(handleResponse)
         .then(user => {
             // login successful if there's a jwt token in the response
@@ -61,7 +61,7 @@ function register(user) {
         body: JSON.stringify(user)
     };
 
-    return fetch(`${apiConstants.API_URL}/users/register`, requestOptions).then(handleResponse);
+    return fetch(`${apiConstants.API_URL}/api/user/register`, requestOptions).then(handleResponse);
 }
 
 function update(user) {
@@ -85,6 +85,7 @@ function _delete(id) {
 }
 
 function handleResponse(response) {
+  console.log(response,'response')
     return response.text().then(text => {
         const data = text && JSON.parse(text);
         if (!response.ok) {

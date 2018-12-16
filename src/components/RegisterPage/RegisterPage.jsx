@@ -13,7 +13,7 @@ class RegisterPage extends React.Component {
             user: {
                 firstName: '',
                 lastName: '',
-                username: '',
+                userName: '',
                 email: '',
                 password: '',
                 confirmPassword: ''
@@ -44,9 +44,30 @@ class RegisterPage extends React.Component {
         this.setState({ submitted: true });
         const { user } = this.state;
         const { dispatch } = this.props;
-        if (user.firstName && user.lastName && user.username && user.password && user.email && user.confirmPassword) {
+        if(!this.validateForm(user)){
+          return;
+        }
+        if (user.firstName && user.lastName && user.userName && user.password && user.email && user.confirmPassword) {
             dispatch(userActions.register(user));
         }
+    }
+
+    validateForm(user){
+        let isFormValid = true;
+        let errors = {};
+        if (typeof user.email !== "undefined") {
+          //regular expression for email validation
+          var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+          if (!pattern.test(user.email)) {
+            isFormValid = false;
+            errors["email"] = "Please enter valid email-ID.";
+          }
+        }
+        console.log(isFormValid,'isFormValid');
+        this.setState({
+          errors: errors
+        });
+        return isFormValid;
     }
 
     render() {
@@ -71,10 +92,10 @@ class RegisterPage extends React.Component {
                           <div className="help-block">Last Name is required</div>
                       }
                   </div>
-                  <div className={'form-group' + (submitted && !user.username ? ' has-error' : '')}>
-                      <label htmlFor="username">Username</label>
-                      <input type="text" className="form-control" name="username" value={user.username} onChange={this.handleChange} />
-                      {submitted && !user.username &&
+                  <div className={'form-group' + (submitted && !user.userName ? ' has-error' : '')}>
+                      <label htmlFor="userName">Username</label>
+                      <input type="text" className="form-control" name="userName" value={user.userName} onChange={this.handleChange} />
+                      {submitted && !user.userName &&
                           <div className="help-block">Username is required</div>
                       }
                   </div>
