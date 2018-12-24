@@ -4,11 +4,11 @@ const initialState = { isSearchOpen: false };
 
 export function search(state = initialState, action) {
 	switch (action.type) {
-	case searchConstants.modalOpen:
+	case searchConstants.SEARCH_OPEN:
 		return {
 			isSearchOpen: true
 		};
-	case searchConstants.modalClose:
+	case searchConstants.SEARCH_CLOSE:
 		return {
 			isSearchOpen: false
 		};

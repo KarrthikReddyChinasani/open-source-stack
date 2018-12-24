@@ -8,11 +8,9 @@ import { connect } from 'react-redux';
 class App extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { isSearchOpen: false };
 	}
 
 	render() {
-		console.log('coming here', this.props);
 		return !this.props.isSearchOpen ? (
 			<div>
 				<Header />
@@ -25,7 +23,6 @@ class App extends React.Component {
 }
 
 function mapStateToProps(state) {
-	console.log('app', state);
 	const { isSearchOpen } = state.search;
 	return {
 		isSearchOpen
