@@ -23,27 +23,27 @@ class Header extends React.Component {
 			<div>
 				<div className="container-fluid header">
 					<div className="row">
-						<div className="col col-md-8 col-md-offset-2">
-							<div className="col col-md-3 project-name">
-								<span className="title-1">Open Source</span>{' '}
-								<span className="title-2">Stack</span>
-							</div>
-							<div className="col col-md-7 nav-wrapper">
-								<ul className="nav">
-									<li>
-										<a className="icon-text-button" href="/">
-											<svg
-												tabIndex=""
-												xmlns="http://www.w3.org/2000/svg"
-												viewBox="0 0 23 24"
-												role="img"
-												aria-label="Binoculars"
-											>
-												<g>
-													<path d="M16.5 9.07a.5.5 0 0 1-1 0c0-.59-1-1.23-2.5-1.43v8.93a5.5 5.5 0 1 0 9.95-3.22l-3-7a.51.51 0 0 0-.11-.16l-1.41-1.4L17 1a.53.53 0 0 0-.11-.18 2.76 2.76 0 0 0-3.71 0 .5.5 0 0 0-.15.35v5.5c2.05.24 3.5 1.21 3.5 2.44m2 12a4.5 4.5 0 1 1 4.5-4.5 4.51 4.51 0 0 1-4.5 4.5M0 16.57a5.5 5.5 0 0 0 11 0V7.64c-1.48.21-2.5.85-2.5 1.43a.5.5 0 1 1-1 0c0-1.23 1.45-2.2 3.5-2.44V1.07a.5.5 0 0 0-.15-.35 2.76 2.76 0 0 0-3.71 0A.49.49 0 0 0 7 .89l-1.43 3.9-1.42 1.42a.5.5 0 0 0-.15.16l-3 7a5.47 5.47 0 0 0-1 3.2m5.5 4.5a4.5 4.5 0 1 1 4.5-4.5 4.51 4.51 0 0 1-4.5 4.5" />
-													<path d="M5.5 14.07a.5.5 0 0 0 0-1 3.5 3.5 0 0 0-3.5 3.5.5.5 0 0 0 1 0 2.5 2.5 0 0 1 2.5-2.5M18.5 14.07a.5.5 0 0 0 0-1 3.5 3.5 0 0 0-3.5 3.5.5.5 0 1 0 1 0 2.5 2.5 0 0 1 2.5-2.5" />
-												</g>
-											</svg>
+					<div className="col col-md-11 col-md-offset-1">
+						<div className="col col-md-3 project-name">
+							<span className="title-1">Open Source</span>{' '}
+							<span className="title-2">Stack</span>
+						</div>
+						<div className="col col-md-5 nav-wrapper">
+							<ul className="nav">
+								<li>
+									<a className="icon-text-button" href="/">
+										<svg
+											tabIndex=""
+											xmlns="http://www.w3.org/2000/svg"
+											viewBox="0 0 23 24"
+											role="img"
+											aria-label="Binoculars"
+										>
+											<g>
+												<path d="M16.5 9.07a.5.5 0 0 1-1 0c0-.59-1-1.23-2.5-1.43v8.93a5.5 5.5 0 1 0 9.95-3.22l-3-7a.51.51 0 0 0-.11-.16l-1.41-1.4L17 1a.53.53 0 0 0-.11-.18 2.76 2.76 0 0 0-3.71 0 .5.5 0 0 0-.15.35v5.5c2.05.24 3.5 1.21 3.5 2.44m2 12a4.5 4.5 0 1 1 4.5-4.5 4.51 4.51 0 0 1-4.5 4.5M0 16.57a5.5 5.5 0 0 0 11 0V7.64c-1.48.21-2.5.85-2.5 1.43a.5.5 0 1 1-1 0c0-1.23 1.45-2.2 3.5-2.44V1.07a.5.5 0 0 0-.15-.35 2.76 2.76 0 0 0-3.71 0A.49.49 0 0 0 7 .89l-1.43 3.9-1.42 1.42a.5.5 0 0 0-.15.16l-3 7a5.47 5.47 0 0 0-1 3.2m5.5 4.5a4.5 4.5 0 1 1 4.5-4.5 4.51 4.51 0 0 1-4.5 4.5" />
+												<path d="M5.5 14.07a.5.5 0 0 0 0-1 3.5 3.5 0 0 0-3.5 3.5.5.5 0 0 0 1 0 2.5 2.5 0 0 1 2.5-2.5M18.5 14.07a.5.5 0 0 0 0-1 3.5 3.5 0 0 0-3.5 3.5.5.5 0 1 0 1 0 2.5 2.5 0 0 1 2.5-2.5" />
+											</g>
+										</svg>
 										Browse
 										</a>
 									</li>
@@ -65,11 +65,12 @@ class Header extends React.Component {
 												<input type="search" id="search" placeholder="Search..."  onClick={this.searchClick} />
 											</div>
 										</div>
-									</li>
-								</ul>
-							</div>
-							<div className="col col-md-2 sign-in-header">
-								<a href="/register" className="register-button">
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div className="col col-md-3 sign-in-header">
+							<a href="/register" className="register-button">
 								Create Account
 								</a>
 								<a href="/login" className="icon-text-button">

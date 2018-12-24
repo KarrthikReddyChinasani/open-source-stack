@@ -1,3 +1,3 @@
 export const apiConstants = {
-	API_URL : 'http://localhost:4000'
+	API_URL : 'https://localhost:3401'
 };

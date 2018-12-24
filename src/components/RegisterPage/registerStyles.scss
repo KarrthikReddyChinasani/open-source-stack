@@ -1,0 +1,25 @@
+.login-page {
+  .register-btn-sec {
+    margin: 10px 30px;
+
+    .btn {
+      text-align: center;
+      border-radius: 2px;
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,.16);
+      background-color: #FFFFFF;
+      color: #4a4a4a;
+      border-radius: 100px;
+      width: 49%;
+      font-weight: 600;
+      outline: 0;
+    }
+
+    .btn:active {
+      outline: 0;
+    }
+
+    .register-btn {
+      margin-right: 5px;
+    }
+  }
+}
