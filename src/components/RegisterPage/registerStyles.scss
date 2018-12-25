@@ -1,25 +1,130 @@
-.login-page {
-  .register-btn-sec {
-    margin: 10px 30px;
+.register-page {
+  .main {
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 600px;
+    margin: 3em auto;
+    border-radius: 1.5em;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+  }
+  
+  .sign {
+    padding-top: 40px;
+    color: #4772d9;
+    font-family: "Titillium Web", sans-serif;
+    font-weight: bold;
+    font-size: 23px;
+  }
+  
+  .un {
+  width: 76%;
+  color: rgb(38, 50, 56);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  background: rgba(136, 126, 126, 0.04);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  box-sizing: border-box;
+  border: 2px solid rgba(0, 0, 0, 0.02);
+  margin-bottom: 50px;
+  margin-left: 46px;
+  text-align: center;
+  margin-bottom: 27px;
+  font-family: "Titillium Web", sans-serif;
+  }
 
-    .btn {
-      text-align: center;
-      border-radius: 2px;
-      box-shadow: 0 8px 16px 0 rgba(0,0,0,.16);
-      background-color: #FFFFFF;
-      color: #4a4a4a;
-      border-radius: 100px;
-      width: 49%;
-      font-weight: 600;
-      outline: 0;
-    }
+  .last-name {
+    margin: 0px !important;
+  }
 
-    .btn:active {
-      outline: 0;
-    }
+  .name{
+  width: 76%;
+  color: rgb(38, 50, 56);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  background: rgba(136, 126, 126, 0.04);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  box-sizing: border-box;
+  border: 2px solid rgba(0, 0, 0, 0.02);
+  margin-left: 46px;
+  text-align: center;
+  margin-bottom: 27px;
+  font-family: "Titillium Web", sans-serif;
+  }
+  
+  form.form1 {
+    padding-top: 40px;
+  }
+  
+  .pass {
+  width: 76%;
+  color: rgb(38, 50, 56);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  background: rgba(136, 126, 126, 0.04);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  box-sizing: border-box;
+  border: 2px solid rgba(0, 0, 0, 0.02);
+  margin-bottom: 50px;
+  margin-left: 46px;
+  text-align: center;
+  margin-bottom: 27px;
+  font-family: "Titillium Web", sans-serif;
+  }
+  
+  
+  .un:focus, .pass:focus {
+    border: 2px solid rgba(0, 0, 0, 0.18) !important;
+    
+  }
+  
+  .submit {
+  cursor: pointer;
+    border-radius: 5em;
+    color: #fff;
+    background: #4772d9;
+    border: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: "Titillium Web", sans-serif;
+    margin-left: 35%;
+    font-size: 13px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+  }
+  
+  .forgot {
+    text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+    color: #4772d9;
+    padding-top: 25px;
+  }
 
-    .register-btn {
-      margin-right: 5px;
-    }
+  .register {
+    text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+    color: #4772d9;
+    padding-top: 15px;
+  }
+  
+  a,Link {
+    text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+    color: #4772d9;
+    text-decoration: none
+  }
+
+  .p-m-0 {
+    margin: 0px !important;
+    padding: 0px !important;
   }
 }

@@ -40,44 +40,48 @@ class LoginPage extends React.Component {
 
 	render() {
 		const { loggingIn } = this.props;
-		const { userName, password, submitted } = this.state;
+		const { userName, password /*, submitted*/ } = this.state;
 		return (
-
-			<div className="col-md-4 col-md-offset-8 login-page">
-
-				<div className="box-wrapper">
-					<h2>Login</h2>
-					<form name="form" onSubmit={this.handleSubmit}>
-						<div className={'form-group' + (submitted && !userName ? ' has-error' : '')}>
-							<label htmlFor="userName">Email/UserName</label>
-							<input type="text" className="form-control" name="userName" value={userName} onChange={this.handleChange} />
-							{submitted && !userName &&
-	                            <div className="help-block">Username is required</div>
-							}
-						</div>
-						<div className={'form-group' + (submitted && !password ? ' has-error' : '')}>
-							<label htmlFor="password">Password</label>
-							<input type="password" className="form-control" name="password" value={password} onChange={this.handleChange} />
-							{submitted && !password &&
-	                            <div className="help-block">Password is required</div>
-							}
-						</div>
-						<div className="forgot-pwd">
-							<Link to="/register" className="btn btn-link">Register</Link>
-							<Link to="/register" className="btn btn-link">Forgot Password</Link>
-						</div>
-						<div className="form-group">
-							<div className="login-btn">
-								<button className="btn">Submit</button>
-								{loggingIn &&
-		                            <img src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
-								}
-							</div>
-						</div>
-						<div className="login-links">
-							<Link to="/register" className="btn btn-link">Login with github</Link>
-							<Link to="/register" className="btn btn-link">Login with **</Link>
-						</div>
+			<div className="col-md-4 col-md-offset-4 login-page">
+				<div className="main">
+					<p className="sign" align="center">
+            Sign in
+					</p>
+					<form className="form1">
+						<input
+							className="un"
+							type="text"
+							align="center"
+							name="userName"
+							placeholder="Username"
+							value={userName}
+							onChange={this.handleChange}
+						/>
+						<input
+							className="pass"
+							type="password"
+							align="center"
+							name="password"
+							placeholder="Password"
+							value={password}
+							onChange={this.handleChange}
+						/>
+						<button className="submit" align="center" onClick={this.handleSubmit}>
+              Sign in
+						</button>
+						{loggingIn && (
+							<img src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+						)}
+						<p className="forgot" align="center">
+							<Link to="/register" href="#">
+                Forgot Password?
+							</Link>
+						</p>
+						<p className="register" align="center">
+							<Link to="/register" href="#">
+                Register
+							</Link>
+						</p>
 					</form>
 				</div>
 			</div>
