@@ -44,10 +44,10 @@ function register(user) {
 
 		userService.register(user)
 			.then(
-				user => { 
+				user => {
 					dispatch(success());
 					history.push('/login');
-					dispatch(alertActions.success('Registration successful'));
+					dispatch(alertActions.success(user.message));
 				},
 				error => {
 					dispatch(failure(error.toString()));
