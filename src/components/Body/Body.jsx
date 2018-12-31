@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
 import React from 'react';
 import { Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -9,20 +10,43 @@ import { HomePage } from '../HomePage';
 import { LoginPage } from '../LoginPage';
 import { RegisterPage } from '../RegisterPage';
 import './bodyStyles.scss';
+import {NotificationContainer, NotificationManager} from 'react-notifications';
 
 class Body extends React.Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-	       width:  800,
-	       height: 182
-	     }
+			width:  800,
+			height: 182
+		};
 		const { dispatch } = this.props;
 		history.listen((location, action) => {
 			// clear alert on location change
 			dispatch(alertActions.clear());
 		});
+	
+	}
+
+	UNSAFE_componentWillReceiveProps(nextProps) {
+		if(nextProps.alert.type == 'alert-success') {
+			this.createNotification('alert-success', nextProps.alert.message);
+		}
+	}
+
+	createNotification (type, message) {
+		  switch (type) {
+		case 'info':
+			return NotificationManager.info('Info message');
+		case 'alert-success':
+			return NotificationManager.success(message, 'Title here');
+		case 'warning':
+			return NotificationManager.warning('Warning message', 'Close after 3000ms', 3000);
+		case 'error':
+			return NotificationManager.error('Error message', 'Click me!', 5000, () => {
+				alert('callback');
+			  });
+		}
 	}
 
 	/**
@@ -36,37 +60,34 @@ class Body extends React.Component {
 	   * Add event listener
 	   */
 	  componentDidMount() {
-			console.log("coming here in body")
 	    this.updateDimensions();
-	    window.addEventListener("resize", this.updateDimensions.bind(this));
+	    window.addEventListener('resize', this.updateDimensions.bind(this));
 	  }
 
 	  /**
 	   * Remove event listener
 	   */
 	  componentWillUnmount() {
-	    window.removeEventListener("resize", this.updateDimensions.bind(this));
+	    window.removeEventListener('resize', this.updateDimensions.bind(this));
 	  }
 
 	render() {
 		const { alert } = this.props;
 		return (
 			<div>
-			<header className="home_image" style={this.state} >
-				<div className="container-fluid">
-					<div className="col-sm-12">
-						{alert.message &&
-                            <div className={`alert ${alert.type}`}>{alert.message}</div>
-						}
-						<Router history={history}>
-							<div>
-								<PrivateRoute exact path="/" component={HomePage} />
-								<Route path="/login" component={LoginPage} />
-								<Route path="/register" component={RegisterPage} />
-							</div>
-						</Router>
+				<NotificationContainer/>
+				<header className="home_image" style={this.state} >
+					<div className="container-fluid">
+						<div className="col-sm-12">
+							<Router history={history}>
+								<div>
+									<PrivateRoute exact path="/" component={HomePage} />
+									<Route path="/login" component={LoginPage} />
+									<Route path="/register" component={RegisterPage} />
+								</div>
+							</Router>
+						</div>
 					</div>
-				</div>
 				</header>
 			</div>
 		);
@@ -76,7 +97,7 @@ class Body extends React.Component {
 function mapStateToProps(state) {
 	const { alert } = state;
 	return {
-		alert
+		alert,
 	};
 }
 
