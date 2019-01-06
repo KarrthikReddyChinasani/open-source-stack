@@ -9,6 +9,7 @@
   "dependencies": {
     "babel-jest": "^23.6.0",
     "history": "^4.6.3",
+    "loadash": "^1.0.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-growl": "^0.1.2",

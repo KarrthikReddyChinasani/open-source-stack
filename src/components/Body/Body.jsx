@@ -11,6 +11,7 @@ import { LoginPage } from '../LoginPage';
 import { RegisterPage } from '../RegisterPage';
 import './bodyStyles.scss';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
+import {TopicsPage} from '../TopicsPage';
 
 class Body extends React.Component {
 	constructor(props) {
@@ -84,6 +85,7 @@ class Body extends React.Component {
 									<PrivateRoute exact path="/" component={HomePage} />
 									<Route path="/login" component={LoginPage} />
 									<Route path="/register" component={RegisterPage} />
+									<Route path="/topics" component={TopicsPage}/>
 								</div>
 							</Router>
 						</div>
