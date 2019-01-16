@@ -31,7 +31,7 @@ class Header extends React.Component {
 							<div className="col col-md-5 nav-wrapper">
 								<ul className="nav">
 									<li>
-										<a className="icon-text-button" href="/">
+										<a className="icon-text-button" href="/topics">
 											<svg
 												tabIndex=""
 												xmlns="http://www.w3.org/2000/svg"
