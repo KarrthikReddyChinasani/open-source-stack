@@ -10,7 +10,7 @@ function getTopics() {
 		method: 'GET',
 		headers: { 'Content-Type': 'application/json' }
 	};
-	return fetch(`${apiConstants.API_URL}/api/topics`, requestOptions)
+	return fetch(`${apiConstants.API_URL}/api/gitHubTopics`, requestOptions)
 		.then(handleResponse)
 		.then(topics => {
 			console.log(topics,'response');
