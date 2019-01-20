@@ -5,13 +5,15 @@ import { registration } from './registration.reducer';
 import { users } from './users.reducer';
 import { alert } from './alert.reducer';
 import { search } from './search.reducer';
+import { topics } from './topics.reducer';
 
 const rootReducer = combineReducers({
 	authentication,
 	registration,
 	users,
 	alert,
-	search
+	search,
+	topics
 });
 
 export default rootReducer;

@@ -31,7 +31,7 @@ class Header extends React.Component {
 							<div className="col col-md-5 nav-wrapper">
 								<ul className="nav">
 									<li>
-										<a className="icon-text-button" href="/">
+										<a className="icon-text-button" href="/topics">
 											<svg
 												tabIndex=""
 												xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +44,7 @@ class Header extends React.Component {
 													<path d="M5.5 14.07a.5.5 0 0 0 0-1 3.5 3.5 0 0 0-3.5 3.5.5.5 0 0 0 1 0 2.5 2.5 0 0 1 2.5-2.5M18.5 14.07a.5.5 0 0 0 0-1 3.5 3.5 0 0 0-3.5 3.5.5.5 0 1 0 1 0 2.5 2.5 0 0 1 2.5-2.5" />
 												</g>
 											</svg>
-										Browse
+										Topics
 										</a>
 									</li>
 									<li>
@@ -59,13 +59,13 @@ class Header extends React.Component {
 									<li>
 										<a href="/contact/">Followed</a>
 									</li>
-									<li>
+									{/* <li>
 										<div className="search-box-header">
 											<div className="search-header-container">
 												<input type="search" id="search" placeholder="Search..."  onClick={this.searchClick} />
 											</div>
 										</div>
-									</li>
+									</li> */}
 								</ul>
 							</div>
 							<div className="col col-md-3 sign-in-header">
