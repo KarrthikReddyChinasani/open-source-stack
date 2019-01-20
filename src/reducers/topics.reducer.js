@@ -1,7 +1,6 @@
 import { topicsConstant } from '../constants';
 
-export function topics(state = {}, action) {
-	console.log(action, 'topic');
+export function topics(state = {'topics': { 'topicsByName':[], 'letters': []}}, action) {
 	switch (action.type) {
 	case topicsConstant.GET_TOPICS:
 		return {

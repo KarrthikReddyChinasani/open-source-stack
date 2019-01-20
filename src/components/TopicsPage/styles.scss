@@ -84,9 +84,10 @@ img {
 }
 
 .card__image {
+  background-color: #999999;
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100px 100px;
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
   filter: contrast(70%);
@@ -104,22 +105,6 @@ img {
       padding-top: 66.6%; // 3:2 aspect ratio
     }
   }
-}
-
-.card__image--flowers {
-  background-image: url(https://unsplash.it/800/600?image=82);
-}
-
-.card__image--river {
-  background-image: url(https://unsplash.it/800/600?image=11);
-}
-
-.card__image--record {
-  background-image: url(https://unsplash.it/800/600?image=39);
-}
-
-.card__image--fence {
-  background-image: url(https://unsplash.it/800/600?image=59);
 }
 
 .card__title {
@@ -143,4 +128,27 @@ img {
   margin-left: 8px;
   margin-right: 8px;
   border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+
+.letter-search {
+  margin-top: 30px;
+}
+
+.letter-item {
+  padding-left: 8px;
+  padding-right: 8px;
+  display: inline-block;
+  text-align: center;
+  color: #4772d9;
+  font-family: "Titillium Web", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+
+.letter-item:hover {
+  position: relative;	
+  zoom: 1.4;
+  font-weight: 800;
 }
