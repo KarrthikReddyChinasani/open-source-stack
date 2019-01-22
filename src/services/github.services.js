@@ -9,7 +9,7 @@ function githubConnect() {
 		method: 'GET',
 		headers: { 'Content-Type': 'application/json' }
 	};
-	return fetch(`${githubConstants.OAUTH_URL}`, requestOptions)
+	return fetch(`${githubConstants.OAUTH_URL}?client_id=18affc69905f556579bf&redirect_uri=${githubConstants.URL}/github`, requestOptions)
 		.then(handleResponse)
 		.then(data => {
 			return data;
@@ -18,17 +18,7 @@ function githubConnect() {
 
 function handleResponse(response) {
 	return response.text().then(text => {
-		const data = text && JSON.parse(text);
-		if (!response.ok) {
-			if (response.status === 401) {
-				// auto logout if 401 response returned from api
-				// location.reload(true);
-			}
-
-			const error = (data && data.message) || response.statusText;
-			return Promise.reject(error);
-		}
-
-		return data;
+	
+		return text;
 	});
 }

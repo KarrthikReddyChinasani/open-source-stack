@@ -13,6 +13,7 @@ import './bodyStyles.scss';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 import {TopicsPage} from '../TopicsPage';
 import { ProfilePage } from '../../pages/ProfilePage';
+import GithubPage from '../../pages/github/github';
 
 class Body extends React.Component {
 	constructor(props) {
@@ -89,6 +90,7 @@ class Body extends React.Component {
 									<Route path="/topics" component={TopicsPage}/>
 									<Route path="/home" component={HomePage}/>
 									<Route path="/profile" component={ProfilePage} />
+									<Route path="/github" component={GithubPage} />
 								</div>
 							</Router>
 						</div>

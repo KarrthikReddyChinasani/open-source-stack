@@ -15,8 +15,10 @@ class ProfilePage extends React.Component {
 	}
 
 	static getDerivedStateFromProps(props, state) {
-		console.log('props', props);
-		console.log('state', state);
+		if(props.githubConnect.github!= null) {
+			var wnd = window.open('about:blank', '', '_blank');
+			wnd.document.write(props.githubConnect.github.res);
+		}
 		return null;
 	}
 
@@ -32,10 +34,7 @@ class ProfilePage extends React.Component {
 }
 
 function mapStateToProps(state) {
-	// const { topics } = state;
-	// return {
-	// 	topics
-	// };
+	return state;
 }
 
 const connectedProfilePage = connect(mapStateToProps)(ProfilePage);
