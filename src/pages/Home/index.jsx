@@ -1,14 +1,14 @@
 import React from 'react';
 
-export default class Home extends React.Component {
+export default class HomePage extends React.Component {
 	render() {
 		return ( 
-			<div className="App">
-				<header className="App-header">
+			<div>
+				<div>
 					<p>
 						Lets get started with Open Source Stacks
 					</p>
-				</header>
+				</div>
 			</div>
 		);
 	}
