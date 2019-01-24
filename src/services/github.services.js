@@ -9,7 +9,7 @@ function githubConnect() {
 		method: 'GET',
 		headers: { 'Content-Type': 'application/json' }
 	};
-	return fetch(`${githubConstants.OAUTH_URL}?client_id=18affc69905f556579bf&redirect_uri=${githubConstants.URL}/github`, requestOptions)
+	return fetch(`${githubConstants.OAUTH_URL}?client_id=18affc69905f556579bf`, requestOptions)
 		.then(handleResponse)
 		.then(data => {
 			return data;
