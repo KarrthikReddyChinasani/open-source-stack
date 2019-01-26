@@ -2,6 +2,8 @@ import React from 'react';
 import './styles.scss';
 import { connect } from 'react-redux';
 import { githubActions } from '../../actions';
+import GitHubLogin from 'react-github-login';
+import { githubService } from '../../services';
 
 class ProfilePage extends React.Component {
 	constructor(props) {
@@ -12,6 +14,14 @@ class ProfilePage extends React.Component {
 	connectToGitHub() {
 		const { dispatch } = this.props;
 		dispatch(githubActions.githubConnect());
+	}
+
+	onSuccess(response){
+		console.log(response);
+		githubService.githubToken(response.code);
+	}
+	onFailure(response){
+		console.error(response);
 	}
 
 	static getDerivedStateFromProps(props, state) {
@@ -25,9 +35,15 @@ class ProfilePage extends React.Component {
 	render() {
 		return (
 			<div>
-				<a >
-					<span onClick={() => this.connectToGitHub()}>Git hub connect</span>
-				</a>
+				<div>
+					<a >
+						<span onClick={() => this.connectToGitHub()}>Git hub connect</span>
+					</a>
+				</div>
+				<GitHubLogin clientId="18affc69905f556579bf"
+					redirectUri='https://localhost:8080/profile'
+					onSuccess={this.onSuccess}
+					onFailure={this.onFailure}/>
 			</div>
 		);
 	}
