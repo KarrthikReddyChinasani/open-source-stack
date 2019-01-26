@@ -3,6 +3,8 @@ import React from 'react';
 // import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './styles.scss';
+import GitHubLogin from '../../helpers/GitHubLogin';
+import { githubService } from '../../services';
 
 import { searchActions } from '../../actions';
 
@@ -10,6 +12,13 @@ class Header extends React.Component {
 	constructor(props) {
 		super(props);
 		this.searchClick = this.searchClick.bind(this);
+	}
+
+	onSuccess(response) {
+		githubService.githubToken(response.code);
+	}
+	onFailure(response) {
+		console.log('khushi', response);
 	}
 
 	searchClick(e) {
@@ -69,7 +78,7 @@ class Header extends React.Component {
 								</ul>
 							</div>
 							<div className="col col-md-3 sign-in-header">
-								<a href="/register" className="register-button">
+								{/* <a href="/register" className="register-button">
 								Create Account
 								</a>
 								<a href="/login" className="icon-text-button">
@@ -83,7 +92,14 @@ class Header extends React.Component {
 										<path d="M12 0C5.4 0 0 5.4 0 12c0 3.2 1.2 6.2 3.5 8.4C5.7 22.7 8.8 24 12 24s6.3-1.3 8.5-3.6S24 15.1 24 12c0-6.6-5.4-12-12-12zm8.1 19.4c-1.1-.6-2.6-1.2-4.3-1.8-.4-.2-.8-.3-1.3-.5v-1.8c.5-.3 1.4-1.1 1.5-2.9.4-.2.6-.7.6-1.4 0-.6-.2-1-.5-1.3.2-.8.7-2.1.4-3.3-.3-1.4-2.2-1.9-3.7-1.9-1.3 0-3 .4-3.6 1.5-.7 0-1.1.3-1.3.5-.6.8-.2 2.4 0 3.2-.3.2-.5.7-.5 1.3 0 .6.2 1.1.6 1.4.1 1.8 1 2.6 1.5 2.9v1.8c-.4.1-.8.3-1.2.4-1.6.6-3.3 1.2-4.4 1.9C2 17.4 1 14.8 1 12 1 5.9 5.9 1 12 1s11 4.9 11 11c0 2.8-1 5.4-2.9 7.4z" />
 									</svg>
 								Sign In
-								</a>
+								</a> */}
+								<GitHubLogin
+									className="register-button"
+									clientId="18affc69905f556579bf"
+									redirectUri="https://localhost:8080/profile"
+									onSuccess={this.onSuccess}
+									onFailure={this.onFailure}
+								/>
 							</div>
 						</div>
 					</div>

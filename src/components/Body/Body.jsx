@@ -89,8 +89,6 @@ class Body extends React.Component {
 									<Route path="/register" component={RegisterPage} />
 									<Route path="/topics" component={TopicsPage}/>
 									<Route path="/home" component={HomePage}/>
-									<Route path="/profile" component={ProfilePage} />
-									<Route path="/github" component={GithubPage} />
 								</div>
 							</Router>
 						</div>
