@@ -12,8 +12,6 @@ import { RegisterPage } from '../RegisterPage';
 import './bodyStyles.scss';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 import {TopicsPage} from '../TopicsPage';
-import { ProfilePage } from '../../pages/ProfilePage';
-import GithubPage from '../../pages/github/github';
 import {FavouriteTopics} from '../FavouriteTopics';
 
 class Body extends React.Component {
@@ -91,7 +89,6 @@ class Body extends React.Component {
 									<Route path="/topics" component={TopicsPage}/>
 									<Route path="/home" component={HomePage}/>
 									<Route path="/favouriteTopics" component={FavouriteTopics} />
-									<Route path="/github" component={GithubPage} />
 								</div>
 							</Router>
 						</div>
