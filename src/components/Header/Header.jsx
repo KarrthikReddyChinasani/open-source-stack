@@ -15,7 +15,10 @@ class Header extends React.Component {
 	}
 
 	onSuccess(response) {
-		githubService.githubToken(response.code);
+		githubService.githubToken(response.code).then(res => {
+			var data = JSON.parse(res).user;
+			localStorage.setItem("user", JSON.stringify(data));
+		});
 	}
 	onFailure(response) {
 		console.log('khushi', response);

@@ -25,14 +25,14 @@ function likeTopic(topicId, like) {
 	const requestOptions = {
 		method: 'POST',
 		headers: {'Content-Type': 'application/json'},
-	 	body: JSON.stringify({ topicId, userId, like })
+		body: JSON.stringify({ topicId, userId, like })
 	};
 
 	return fetch(`${apiConstants.API_URL}/api/addToFavourite/topic`, requestOptions)
-	.then(handleResponse)
-	.then(topic => {
-		return topic;
-	})
+		.then(handleResponse)
+		.then(topic => {
+			return topic;
+		});
 }
 
 function getFavouritetopics() {
@@ -43,11 +43,11 @@ function getFavouritetopics() {
 		headers: {'Content-Type': 'application/json'}
 	};
 	return fetch(`${apiConstants.API_URL}/api/favouritetopics?userId=` + userId , requestOptions)
-	.then(handleResponse)
-	.then(topics => {
-		console.log(topics,'get all topics')
-		return getLettersObjects(topics.favouriteTopicsList);
-	})
+		.then(handleResponse)
+		.then(topics => {
+			console.log(topics,'get all topics');
+			return getLettersObjects(topics.favouriteTopicsList);
+		});
 
 }
 
