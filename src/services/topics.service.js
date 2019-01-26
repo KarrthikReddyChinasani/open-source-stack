@@ -20,7 +20,7 @@ function getTopics() {
 }
 
 function likeTopic(topicId, like) {
-	const userId = JSON.parse(localStorage.getItem('user')).id;
+	const userId = JSON.parse(localStorage.getItem('user')).userId;
 	// console.log(userId,'userId');
 	const requestOptions = {
 		method: 'POST',
@@ -36,7 +36,7 @@ function likeTopic(topicId, like) {
 }
 
 function getFavouritetopics() {
-	const userId = JSON.parse(localStorage.getItem('user')).id;
+	const userId = JSON.parse(localStorage.getItem('user')).userId;
 
 	const requestOptions = {
 		method: 'GET',
@@ -45,7 +45,6 @@ function getFavouritetopics() {
 	return fetch(`${apiConstants.API_URL}/api/favouritetopics?userId=` + userId , requestOptions)
 		.then(handleResponse)
 		.then(topics => {
-			console.log(topics,'get all topics');
 			return getLettersObjects(topics.favouriteTopicsList);
 		});
 

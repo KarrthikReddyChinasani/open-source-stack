@@ -6,12 +6,12 @@ import './styles.scss';
 import AlphabetHeading from '../topics/alphabet';
 import TopicsRow from '../topics/row';
 
-class FavouriteTopics extends React.Component {
+class FavouriteTopicsPage extends React.Component {
 	constructor(props) {
 		super(props);
 		this.clickSelect = this.clickSelect.bind(this);
 		const { dispatch } = this.props;
-		topicsActions.favouriteTopics();
+		dispatch(topicsActions.favouriteTopics());
 		this.state = {
 			topics: {},
 			selectedTopics: [],
@@ -32,11 +32,11 @@ class FavouriteTopics extends React.Component {
 	}
 
 	static getDerivedStateFromProps(props, state) {
-		if(props.topics.topics !== state.topics) {
-			return { topics: props.topics.topics,
-				selectedTopics: props.topics.topics.topicsByName,
+		if(props.topics.liked !== state.topics) {
+			return { topics: props.topics.liked,
+				selectedTopics: props.topics.liked.topicsByName,
 				letterSelected: 'All',
-				letters: props.topics.topics.letters};
+				letters: props.topics.liked.letters};
 		}
 		return null;
 	}
@@ -83,5 +83,5 @@ function mapStateToProps(state) {
 	};
 }
 
-const connectedFavouriteTopicsPage = connect(mapStateToProps)(FavouriteTopics);
-export { connectedFavouriteTopicsPage as FavouriteTopics };
+const connectedFavouriteTopicsPage = connect(mapStateToProps)(FavouriteTopicsPage);
+export { connectedFavouriteTopicsPage as FavouriteTopicsPage };

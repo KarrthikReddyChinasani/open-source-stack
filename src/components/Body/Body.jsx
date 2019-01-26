@@ -12,7 +12,7 @@ import { RegisterPage } from '../RegisterPage';
 import './bodyStyles.scss';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 import {TopicsPage} from '../TopicsPage';
-import {FavouriteTopics} from '../FavouriteTopics';
+import {FavouriteTopicsPage} from '../FavouriteTopics';
 
 class Body extends React.Component {
 	constructor(props) {
@@ -83,12 +83,12 @@ class Body extends React.Component {
 						<div className="col-sm-12">
 							<Router history={history}>
 								<div>
-									<PrivateRoute exact path="/" component={HomePage} />
+									<PrivateRoute exact path="/" component={TopicsPage} />
 									<Route path="/login" component={LoginPage} />
 									<Route path="/register" component={RegisterPage} />
 									<Route path="/topics" component={TopicsPage}/>
 									<Route path="/home" component={HomePage}/>
-									<Route path="/favouriteTopics" component={FavouriteTopics} />
+									<Route path="/favourite" component={FavouriteTopicsPage} />
 								</div>
 							</Router>
 						</div>
