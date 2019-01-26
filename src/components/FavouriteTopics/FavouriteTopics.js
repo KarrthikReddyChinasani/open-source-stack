@@ -6,12 +6,12 @@ import './styles.scss';
 import AlphabetHeading from '../topics/alphabet';
 import TopicsRow from '../topics/row';
 
-class TopicsPage extends React.Component {
+class FavouriteTopics extends React.Component {
 	constructor(props) {
 		super(props);
 		this.clickSelect = this.clickSelect.bind(this);
 		const { dispatch } = this.props;
-		dispatch(topicsActions.topics());
+		topicsActions.favouriteTopics();
 		this.state = {
 			topics: {},
 			selectedTopics: [],
@@ -32,8 +32,6 @@ class TopicsPage extends React.Component {
 	}
 
 	static getDerivedStateFromProps(props, state) {
-		console.log(props,'props')
-		console.log(state,'state')
 		if(props.topics.topics !== state.topics) {
 			return { topics: props.topics.topics,
 				selectedTopics: props.topics.topics.topicsByName,
@@ -85,5 +83,5 @@ function mapStateToProps(state) {
 	};
 }
 
-const connectedTopicsPage = connect(mapStateToProps)(TopicsPage);
-export { connectedTopicsPage as TopicsPage };
+const connectedFavouriteTopicsPage = connect(mapStateToProps)(FavouriteTopics);
+export { connectedFavouriteTopicsPage as FavouriteTopics };
