@@ -11,11 +11,11 @@ export const userService = {
     delete: _delete
 };
 
-function login(userName, password) {
+function login(username, password) {
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ userName, password })
+        body: JSON.stringify({ username, password })
     };
 
     return fetch(`${apiConstants.API_URL}/api/user/login`, requestOptions)

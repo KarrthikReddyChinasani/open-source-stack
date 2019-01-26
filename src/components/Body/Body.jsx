@@ -14,6 +14,7 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
 import {TopicsPage} from '../TopicsPage';
 import { ProfilePage } from '../../pages/ProfilePage';
 import GithubPage from '../../pages/github/github';
+import {FavouriteTopics} from '../FavouriteTopics';
 
 class Body extends React.Component {
 	constructor(props) {
@@ -28,7 +29,7 @@ class Body extends React.Component {
 			// clear alert on location change
 			dispatch(alertActions.clear());
 		});
-	
+
 	}
 
 	UNSAFE_componentWillReceiveProps(nextProps) {
@@ -89,6 +90,8 @@ class Body extends React.Component {
 									<Route path="/register" component={RegisterPage} />
 									<Route path="/topics" component={TopicsPage}/>
 									<Route path="/home" component={HomePage}/>
+									<Route path="/favouriteTopics" component={FavouriteTopics} />
+									<Route path="/github" component={GithubPage} />
 								</div>
 							</Router>
 						</div>

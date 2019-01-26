@@ -2,7 +2,9 @@ import { apiConstants } from '../constants';
 import { authHeader } from '../helpers';
 
 export const topicsService = {
-	getTopics
+	getTopics,
+	likeTopic,
+	getFavouritetopics
 };
 
 function getTopics() {
@@ -17,6 +19,38 @@ function getTopics() {
 		});
 }
 
+function likeTopic(topicId, like) {
+	const userId = JSON.parse(localStorage.getItem('user')).id;
+	// console.log(userId,'userId');
+	const requestOptions = {
+		method: 'POST',
+		headers: {'Content-Type': 'application/json'},
+	 	body: JSON.stringify({ topicId, userId, like })
+	};
+
+	return fetch(`${apiConstants.API_URL}/api/addToFavourite/topic`, requestOptions)
+	.then(handleResponse)
+	.then(topic => {
+		return topic;
+	})
+}
+
+function getFavouritetopics() {
+	const userId = JSON.parse(localStorage.getItem('user')).id;
+
+	const requestOptions = {
+		method: 'GET',
+		headers: {'Content-Type': 'application/json'}
+	};
+	return fetch(`${apiConstants.API_URL}/api/favouritetopics?userId=` + userId , requestOptions)
+	.then(handleResponse)
+	.then(topics => {
+		console.log(topics,'get all topics')
+		return getLettersObjects(topics.favouriteTopicsList);
+	})
+
+}
+
 function getLettersObjects(items) {
 	var letters = [];
 	var topicsByName = [];
@@ -25,7 +59,6 @@ function getLettersObjects(items) {
 			letters.push(item.title[0].toUpperCase());
 		}
 	});
-	letters = letters.sort();
 	letters.forEach(function(letter) {
 		var topic = {};
 		topic.letter = letter;

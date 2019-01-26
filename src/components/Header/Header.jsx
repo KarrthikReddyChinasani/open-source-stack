@@ -63,7 +63,7 @@ class Header extends React.Component {
 										<a href="/clients/">Forum</a>
 									</li>
 									<li>
-										<a href="/contact/">Liked</a>
+										<a href="/favouriteTopics">Liked</a>
 									</li>
 									<li>
 										<a href="/contact/">Followed</a>
