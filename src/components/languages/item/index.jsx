@@ -1,6 +1,4 @@
 import React from 'react';
-import Lottie from 'react-lottie';
-import { images } from '../../../images';
 
 export default class LanguageItem extends React.Component {
 
