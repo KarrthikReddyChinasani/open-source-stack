@@ -13,6 +13,7 @@ import './bodyStyles.scss';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 import {TopicsPage} from '../TopicsPage';
 import {FavouriteTopicsPage} from '../FavouriteTopics';
+import Languages from '../../pages/Languages';
 
 class Body extends React.Component {
 	constructor(props) {
@@ -89,6 +90,7 @@ class Body extends React.Component {
 									<Route path="/topics" component={TopicsPage}/>
 									<Route path="/home" component={HomePage}/>
 									<Route path="/favourite" component={FavouriteTopicsPage} />
+									<Route path="/languages" component={Languages}/>
 								</div>
 							</Router>
 						</div>

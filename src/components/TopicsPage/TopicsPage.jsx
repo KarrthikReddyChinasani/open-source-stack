@@ -32,8 +32,6 @@ class TopicsPage extends React.Component {
 	}
 
 	static getDerivedStateFromProps(props, state) {
-		console.log(props,'props')
-		console.log(state,'state')
 		if(props.topics.topics !== state.topics) {
 			return { topics: props.topics.topics,
 				selectedTopics: props.topics.topics.topicsByName,

@@ -1,0 +1,25 @@
+.language-list {
+
+}
+
+.language-list > li {
+    margin: 5px;
+    padding: 10px;
+    cursor: pointer;
+    list-style-type: none;
+    opacity: 1.0;
+    font-size: 16px;
+    transition: opacity .2s ease-in-out;
+    font-family: "Titillium Web", sans-serif;
+    color: #000;
+    border-bottom: 1px solid silver; 
+}
+
+.language-list > li:hover {
+    opacity: 1.0;
+    color: #4772d9 !important;
+}
+
+.language-list:hover > li:not(:hover) {
+    opacity: 0.5;
+}
